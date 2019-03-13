@@ -75,7 +75,7 @@ class ItemForm extends React.Component{
                      this.props.fieldsItem.map((field,index)=>(<Field  key={field.accessor} {...field}   formName={this.props.formName} storeIndex={this.props.storeIndex}  fieldClassName={this.props.fieldClassName} />))
                     }
                       </div>
-                    {this.props.formName!='Display'?  <button  type="submit">ذخیره</button>:null}
+                    {this.props.formName!='Display'?  <button  className="btn btn-primary"  type="submit">ذخیره</button>:null}
             </form>:<div className='sweet-loading'>
                                     <Loader
                                     

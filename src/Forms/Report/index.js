@@ -20,7 +20,10 @@ class Report extends React.Component{
         }
         render(){
             return(<div>
-             { this.props.parameters? <ParameterReport storeIndex='Report' {...this.props} /> :null}
+                 <div class="box-header with-border bg-yellow">
+                    <p className="text-center" style={{fontSize:"14px"}} >{this.props.displayName}</p>
+                 </div>
+             { this.props.parameters? <ParameterReport storeIndex='Report' {...this.props}  style={{'margin-top': '1%'}}/> :null}
              { this.props.items?  <Table storeIndex='Report' {...this.props} showDisplay={false} />: null }
               </div>
                );

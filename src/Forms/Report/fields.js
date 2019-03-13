@@ -4,8 +4,9 @@ export const EzafeReport=[{accessor:'Title',Header:'شهرستان',type:'String
 {accessor:'ReceiptE',Header:'تعداد وصول شده',type:'Number'},
 {accessor:'hajmEzafeh',Header:'حجم اضافه برداشت',type:'Decimal'}]
 
-export const AllViolationReport=[{accessor:'Title',Header:'شهرستان',type:'String'},{accessor:'AllTakhalof',Header:'تعداد تخلفات شناسایی شده',type:'Number'},
-{accessor:'Document',Header:'تعداد رفع تخلفات انجام شده',type:'Number'},
+export const AllViolationReport=[{accessor:'Title',Header:'شهرستان',type:'String'},
+ {accessor:'AllTakhalof',Header:'تعداد تخلفات شناسایی شده',type:'Number'},
+ {accessor:'Document',Header:'تعداد رفع تخلفات انجام شده',type:'Number'},
 {accessor:'Dastur',Header:'تعداد دستور قضایی لغو شده',type:'Number'},
 {accessor:'Polomp',Header:'تعداد پلمپ انجام شده',type:'Number'}]
 

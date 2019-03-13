@@ -25,7 +25,7 @@ class ParameterReport extends React.Component{
                     this.props.parameters.map((field,index)=>(<SelectParam  key={index} {...field}   formName='New' storeIndex={this.props.storeIndex}   />))
                   }
                 
-                 <button  onClick={this.handleClick} >مشاهده گزارش</button>
+                 <button  onClick={this.handleClick} className="btn btn-success"  style={{width:"30%"}}>مشاهده گزارش</button>
                     </div>)
     }
 }

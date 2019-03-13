@@ -40,7 +40,8 @@ componentDidMount(){
 
        this.setState({options:result.data,value:this.props.value,selectedText:this.props.lookupField? result.data.find(a=>a.ID==this.props.value)['Title']:''});
         console.log('options',result);
-       this.props.dispatch(setFieldValue(this.props.accessor+'Id',this.state.value,this.props.storeIndex));
+        
+       this.props.dispatch(setFieldValue(this.props.accessor+'Id',parseInt(this.state.value),this.props.storeIndex));
        this.props.dispatch(setFieldValue(this.props.accessor,{'ID':this.state.value,'Title':this.state.selectedText},this.props.storeIndex));
 
     }).catch(error=>console.log('error lookup',error));

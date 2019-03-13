@@ -18,6 +18,10 @@ export const getAllItem=(storeIndex)=>axios.get(
     URL + "/api/"+storeIndex,
     header
 )
+export const getAllItemWithParam=(storeIndex,type)=>axios.get(
+    URL+"/api/"+storeIndex+"?type="+ type,
+    header
+)
 // export const getAllItemWithSelect=(storeIndex,select)=> $.ajax({
 //     type: 'GET',
 //     url: URL + "/api/"+storeIndex,

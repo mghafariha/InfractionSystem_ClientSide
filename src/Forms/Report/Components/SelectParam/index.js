@@ -46,7 +46,7 @@ class SelectParam extends React.Component{
        const { selectedOption } = this.state;
         console.log('selectprops',this.props)
         return (<Select
-           
+          
               onChange={this.handleChange}
               isMulti={this.props.multiple}
               value={selectedOption}

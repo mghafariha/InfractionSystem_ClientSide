@@ -64,10 +64,12 @@ import Workbook from 'react-excel-workbook';
         }))
   return(
      <div className='data-grid' >
+    
         <ReactTable
               data={this.props.items.map((itm,index)=>({...itm,key:index}))}
               noDataText="اطلاعاتی وجود ندارد"
-              filterable
+              previousText={'قبل'}
+              nextText={'بعد'}
               defaultFilterMethod={this.defaultFilterMethod}    
                // String(row[filter.id]).startsWith( filter.value)
          
@@ -86,7 +88,7 @@ import Workbook from 'react-excel-workbook';
             }}
              
           />
-          <div className="row text-center" style={{marginTop: '10px'}}>
+          <div style={{marginTop: '10px' ,float:'right'}}>
                 <Workbook filename={this.props.ReportName+ ".xlsx"}  element={<button className="fa fa-file-excel-o"  style={{'fontSize':'36px',color:'green'}}></button>}>
                 <Workbook.Sheet data={this.props.items} name="Sheet A">
                 {

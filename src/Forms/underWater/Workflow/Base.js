@@ -58,7 +58,9 @@ class Base extends React.Component{
            
         }
      componentDidMount=(e)=>{
-        getAllItem(this.props.table +"Workflow?$filter=ViolationId eq " + this.props.selectedItem.ID).then((result)=>{
+        getAllItem(this.props.table +"Workflow?$filter=ViolationId eq " + this.props.selectedItem.ID + " and InfractionType eq '"+ this.props.type +"'").then((result)=>{
+
+            console.log('titemmmm',result);
            this.setState({stepItems:result.data.map(a=>a.File?{...a,className:'green'}:{...a,className:'red'})})
            
            this.props.dispatch(setAllItems('UnderWaterWorkflow',result.data.map(a=>a.File?{...a,className:'green'}:{...a,className:'red'})));
@@ -118,20 +120,21 @@ class Base extends React.Component{
              
 
         }
-      steps=  steps.map(step=>
-            this.props.items.find(a=>a.Step==step.accessor)?
+        console.log('ppp',this.props.items);
+      steps=  steps.map(step=> 
+            ( this.props.items.find(a=>a.Step==step.accessor) &&  this.props.items.find(a=>a.Step==step.accessor)['File']?
             {...step,Files:this.props.items.find(a=>a.Step==step.accessor)['File'].split('|').map(a=>({path:a,filename:a.substring(a.lastIndexOf('/')+1)}))}:
-            {...step,Files:[]})
+            {...step,Files:[]}))
         
         console.log('steps',steps);
           return(<div className='warper-form'>
                     <div className="row-items">
                
                          <UnderWaterItem formName={this.state.canEdit?'Edit':'Display'} {...this.props}  formTitle='تخلف' className='form-contents' fieldClassName='field-workflow-item' table={this.props.table} />
-                         {!this.state.canEdit? <input type='button' className='edit-button' onClick={event => this.setState({canEdit:true})}  value='ویرایش' />: <input type='button' className='edit-button' onClick={event => this.setState({canEdit:false})}  value='مشاهده' />}
+                         {!this.state.canEdit? <input type='button'  className='edit-button btn btn-primary' onClick={event => this.setState({canEdit:true})}  value='ویرایش' />: <input type='button' className='edit-button btn btn-success' onClick={event => this.setState({canEdit:false})}  value='مشاهده' />}
                       </div>
                       <div className="row-workflow-items">
-                      <h1> جریان کاری</h1>
+                      <h1> گردش کار</h1>
                         <div className='form-workflow-contents'>
                         {steps.map((step,index)=><div className="field-item" key={step.Header}>
                                                  <fieldset  onClick={event => this.onShowClick(event,step)}>

@@ -85,7 +85,7 @@ export const NotAllowedViolations=[{accessor:'Index',Header:'شماره پرون
 {accessor:'AnnualDischarge',Header:'تخلیه سالانه (هزار متر مکعب)',type:'Decimal',group:'Masloub'},
 {accessor:'HistoryBlocked',Header:'سابقه انسداد',type:'Select',group:'Masloub',Options:'....,دارد,ندارد'}]
 
-  export const wellTypes=[{key:null,value:'انتخاب'},{key:'legal',value:'مجاز'},{key:'illegal',value:'غیر مجاز'}]
+  export const wellTypes=[{key:'legal',value:'مجاز'},{key:'illegal',value:'غیر مجاز'}]
  
     export const infractionTypesLegal = [
     {
@@ -151,87 +151,110 @@ accessor: 'Mansubat',
   ];
 
   export const Ezafe=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
-       {accessor:'Index',Header:'اندکس',type:'String'},
-    {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
-    {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
-    {accessor:'Overdrawn',Header:'حجم اضافه برداشت',type:'Decimal'}]
+     {accessor:'Index',Header:'اندکس',type:'String'},
+     {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
+     {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
+     {accessor:'Overdrawn',Header:'حجم اضافه برداشت',type:'Decimal'},
+	 {accessor:'ChangeUse',Header:'تغییر نوع مصرف',type:'Select',Options:'....,دارد, ندارد'},
+     {accessor:'DebiPresent',Header:'آبدهی فعلی',type:'Decimal'}]
     
-    export const  AdamNasb=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
-         {accessor:'Index',Header:'اندکس',type:'String'},
-      {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
-      {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
-   {accessor:'Volume',Header:'حجم برداشت مجاز  سالانه(هزارمترمکعب)',type:'Decimal'}]
+export const  AdamNasb=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
+     {accessor:'Index',Header:'اندکس',type:'String'},
+     {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
+     {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
+     {accessor:'Volume',Header:'حجم برداشت مجاز  سالانه(هزارمترمکعب)',type:'Decimal'},
+     {accessor:'Saving',Header:'صرفه جويي با نصب کنتور (هزار متر مکعب در سال)',type:'Decimal'},
+     {accessor:'Overdrawn',Header:'اضافه برداشت قبلي(هزار متر مکعب در سال)',type:'Decimal'}]
    
 
 
-   export const Mansubat=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
-           {accessor:'Index',Header:'اندکس',type:'String'},
+export const Mansubat=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
+     {accessor:'Index',Header:'اندکس',type:'String'},
+     {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
+     {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
+     {accessor:'ArtifactsType',Header:'نو ع منصوبات مجاز',type:'Select',Options:'....,دیزلی, برقی'},     
+     {accessor:'EnginePowerNew',Header:'قدرت موتور جدید',type:'Decimal'},
+     {accessor:'VolumeSaving',Header:'مقادير حجم آب صرفه جویی شده',type:'Decimal'},
+     {accessor:'DebiMojaz',Header:'آبدهی مجاز (لیتر بر ثانیه)',type:'Decimal'}]
+			  
+
+
+export const EnteghalAb=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
+     {accessor:'Index',Header:'اندکس',type:'String'},
+     {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
+     {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
+     {accessor:'TransferLine',Header:'طول خط انتقال آب',type:'Decimal'},
+     {accessor:'DebiMojaz',Header:'آبدهی مجاز (لیتر بر ثانیه)',type:'Decimal'},
+     {accessor:'WellDepthViolation',Header:'عمق چاه',type:'Decimal'}]
+     
+     
+     
+export const KafShekani=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
+        {accessor:'Index',Header:'اندکس',type:'String'},
         {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
         {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
-           {accessor:'ArtifactsType',Header:'نو ع منصوبات مجاز',type:'Select',Options:'....,دیزلی, برقی'},     
-             {accessor:'EnginePowerNew',Header:'قدرت موتور جدید',type:'Decimal'}]
+        {accessor:'FloorBreaker',Header:'میزان کف شکنی/عمق فعلی',type:'Decimal'},
+		{accessor:'DebiMojaz',Header:'آبدهی مجاز (لیتر بر ثانیه)',type:'Decimal'},
+        {accessor:'WellDepthViolation',Header:'عمق چاه',type:'Decimal'}]
 
+     
 
-            export const EnteghalAb=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
-           {accessor:'Index',Header:'اندکس',type:'String'},
-           {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
-           {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
-          {accessor:'TransferLine',Header:'طول خط انتقال آب',type:'Decimal'}]
-     
-     
-     
-        export const KafShekani=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
-           {accessor:'Index',Header:'اندکس',type:'String'},
+export const AbForoushi=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
+        {accessor:'Index',Header:'اندکس',type:'String'},
         {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
         {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
-           {accessor:'FloorBreaker',Header:'میزان کف شکنی/عمق فعلی',type:'Decimal'}]
-
-     
-
-           export const AbForoushi=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
-           {accessor:'Index',Header:'اندکس',type:'String'},
-        {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
-        {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'}] 
+		{accessor:'WaterSupply',Header:'آب فروشی',type:'Decimal'},
+        {accessor:'DebiMojaz',Header:'آبدهی مجاز (لیتر بر ثانیه)',type:'Decimal'}] 
      
      
  
      
-        export const TaghirKarbari=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
-           {accessor:'Index',Header:'اندکس',type:'String'},
-        {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
-        {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'}]
-     
-     
-        export const AdamTamdid=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
-           {accessor:'Index',Header:'اندکس',type:'String'},
+export const TaghirKarbari=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
+        {accessor:'Index',Header:'اندکس',type:'String'},
         {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
         {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
-     {accessor:'EndDate',Header:'تاریخ اتمام مدت پروانه بهره برداری',type:'DateTime'},
-     {accessor:'UserFalse',Header:'کاربری غیر مجاز',type:'Select',Options:'....,صنعتی, کشاورزی, دامداری ,شرب, سایر'}]
+		{accessor:'UserFalse',Header:'کاربری غیر مجاز',type:'Select',Options:'....,صنعتی, کشاورزی, دامداری ,شرب, سایر' },
+        {accessor:'DebiMojaz',Header:'آبدهی مجاز (لیتر بر ثانیه)',type:'Decimal'}]
+
+     
+     
+export const AdamTamdid=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
+        {accessor:'Index',Header:'اندکس',type:'String'},
+        {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
+        {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
+        {accessor:'EndDate',Header:'تاریخ اتمام مدت پروانه بهره برداری',type:'DateTime'},
+        {accessor:'UserFalse',Header:'کاربری غیر مجاز',type:'Select',Options:'....,صنعتی, کشاورزی, دامداری ,شرب, سایر'},
+        {accessor:'DebiMojaz',Header:'آبدهی مجاز (لیتر بر ثانیه)',type:'Decimal'},
+	    {accessor:'WellDepthViolation',Header:'عمق چاه',type:'Decimal'}]
 
 
-     export const AbShirin=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
+ export const AbShirin=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
      {accessor:'Index',Header:'اندکس',type:'String'},
      {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
      {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
-     ]
+	 {accessor:'VolumOfWell',Header:'حجم برداشت از چاه',type:'Decimal'},
+     {accessor:'VolumeFiltration',Header:'حجم آب تصفیه شده',type:'Decimal'}]
 
-      export const TaghirMahal=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
+export const TaghirMahal=[{accessor:'OwnerName',Header:'نام و نام خانوادگی مالک',type:'String'},
           {accessor:'Index',Header:'اندکس',type:'String'},
           {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
           {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
           {accessor:'Longitude',Header:'طول جغرافیایی',type:'Decimal'},
-              {accessor:'Latitude',Header:'عرض جغرافیایی',type:'Decimal'},
+          {accessor:'Latitude',Header:'عرض جغرافیایی',type:'Decimal'},
           {accessor:'LongitudeViolation',Header:'طول جغرافیایی تخلف',type:'Decimal'},
-              {accessor:'LatitudeViolation',Header:'عرض جغرافیایی تخلف',type:'Decimal'},
-      ]
+          {accessor:'LatitudeViolation',Header:'عرض جغرافیایی تخلف',type:'Decimal'},
+		  {accessor:'DebiMojaz',Header:'آبدهی مجاز (لیتر بر ثانیه)',type:'Decimal'},
+	      {accessor:'WellDepthViolation',Header:'عمق چاه',type:'Decimal'}]
+	
 
 
-     export const Plumb=[{accessor:'OwnerName',Header:'نام و نام خانوادگی متخلف',type:'String'},
-                      {accessor:'Index',Header:'شماره پرونده',type:'String'},
-                      {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
-                      {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
-                      {accessor:'SerialPlumb',Header:'شماه سریال پلمپ',type:'String'}]
+export const Plumb=[{accessor:'OwnerName',Header:'نام و نام خانوادگی متخلف',type:'String'},
+                    {accessor:'Index',Header:'شماره پرونده',type:'String'},
+                    {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
+                    {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
+                    {accessor:'SerialPlumb',Header:'شماه سریال پلمپ',type:'String'},
+					          {accessor:'DebiMoment',Header:'آبدهی لحظه ای چاه (لیتردرثانیه)',type:'Decimal'},
+                    {accessor:'VolumeSaved',Header:'آب صرفه جویی سالانه(هزارمتر مکعب(',type:'Decimal'}]
 
 
 export const Masloub=[{accessor:'OwnerName',Header:'نام و نام خانوادگی متخلف',type:'String'},
@@ -239,8 +262,7 @@ export const Masloub=[{accessor:'OwnerName',Header:'نام و نام خانوا�
                       {accessor:'City',Header:'شهرستان',type:'Lookup',Options:'Cities',TitleField:'Title'},
                       {accessor:'StudyArea',Header:'محدوده مطالعاتی',type:'Lookup',Options:'AreaStudies',TitleField:'Title'},
                       {accessor:'DateFull',Header:'تاریخ پر و مسلوب المنفعه نمودن چاه',type:'DateTime'},
-       {accessor:'WellDepthViolation',Header:'عمق چاه',type:'Decimal'},
-       {accessor:'EngineType',Header:'نوع موتور',type:'Select',Options:'....,دیزلی, برقی'}]
-
-
-///
+                      {accessor:'WellDepthViolation',Header:'عمق چاه',type:'Decimal'},
+                      {accessor:'EngineType',Header:'نوع موتور',type:'Select',Options:'....,دیزلی, برقی'},
+	                  {accessor:'WellPosition',Header:'وضعیت چاه',type:'Select',Options:'....,فعال ,غیر فعال'}
+                      ]

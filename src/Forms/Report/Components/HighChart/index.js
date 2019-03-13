@@ -47,6 +47,9 @@ class HighchartsWrapper extends React.Component{
 
 
     const options = {
+      credits: {
+        enabled: false
+    },
       title: {
         text: ''
       },
@@ -60,23 +63,34 @@ class HighchartsWrapper extends React.Component{
           tickInterval:1
        },
     series: [{
+      type:'column',
         name:'پلمپ شده',
         data: this.props.items.map(a=>(a.polopm)),
         lineWidth:2
           //[29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
     }, {
+      type:'column',
         name:'رفع تخلفات انجام شده',
         data:this.props.items.map(a=>a.Document), //[216.4, 194.1, 95.6, 54.4, 29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5],
          lineWidth: 5
+    },{
+      type:'column',
+      name:'تعداد تخلفات شناسایی شده',
+      data:this.props.items.map(a=>a.ReportNumber),
+      lineWidth: 5 
     }]
     }
     console.log('props',this.props);
     return(<div>
+      <div class="box-header with-border label-primary">
+              <p className="text-center" style={{fontSize:"14px"}} >نمودار تخلفات</p>
+            </div>
             {this.props.parameters?<ParameterReport  storeIndex='Report' {...this.props} />:null}
             { this.props.items?<HighchartsReact
                 highcharts={Highcharts}
                 options={options}
                 oneToOne={true}
+                constructorType={'chart'}
             />:null}
             </div>
           )

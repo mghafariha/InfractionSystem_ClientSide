@@ -8,19 +8,22 @@ import { Link } from 'react-router-dom';
                 <section className="sidebar" >
                     
                     <ul className="sidebar-menu" data-widget="tree">
-                        <li className="header">منو اصلی</li>
-                        <li className="treeview">
-                            <a href="#">
-                              
-                                <span className="label label-primary pull-left"></span>
-                                <span className="pull-right-container ">
-                                <span className="text-right-container" >مجاز</span>
-                                <i className="fa fa-th"></i>
-                                {/* <i className="fa fa-files-o"></i> */}
-                              
-                                </span>
-                            </a>
-                            <ul className="treeview-menu">
+                     <li className="header">منو اصلی</li>
+                   
+                     <li><Link to="/"><i className="fa"></i>خانه </Link></li>
+                   
+                     <li><Link  to="/UnderWaterNew"><i className="fa"></i>ثبت تخلف</Link></li>
+                        
+                        <li className="treeview menu-open">
+                                    <a href="#">
+                                        <i className="fa"></i>
+                                        <span>چاه مجاز</span>
+                                        <span className=" pull-right-container">
+                                        <i className="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
+
+                            <ul className="treeview-menu " style={{"display": "block"}}>
                                    
                                     <li><Link to="/DataTableAbForoushi"><i className="fa fa-circle-o"></i>آب فروشی </Link></li>
                                     <li><Link to="/DataTableEzafeh"><i className="fa fa-circle-o"></i>اضافه برداشت </Link></li>
@@ -36,16 +39,13 @@ import { Link } from 'react-router-dom';
                             </ul>
                         </li>
                         <li className="treeview">
-                            <a href="#">
-                              
-                                <span className="label label-primary pull-left"></span>
-                                <span className="pull-right-container ">
-                                <span className="text-right-container">غیر مجاز</span>
-                                <i className="fa fa-th"></i>
-                                {/* <i className="fa fa-files-o"></i> */}
-                              
-                                </span>
-                            </a>
+                                    <a href="#">
+                                        <i className="fa"></i>
+                                        <span>چاه غیر مجاز</span>
+                                        <span className=" pull-right-container">
+                                        <i className="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
                             <ul className="treeview-menu">
                                     <li><Link to="/DataGridPlumb"><i className="fa fa-circle-o"></i>پلمپ </Link></li>
                                     <li><Link to="/DataTableMasloub"><i className="fa fa-circle-o"></i>پر و مسلوب المنفعه بودن </Link></li>
@@ -55,16 +55,13 @@ import { Link } from 'react-router-dom';
                             
                         </li>
                         <li className="treeview">
-                            <a href="#">
-                              
-                                <span className="label label-primary pull-left"></span>
-                                <span className="pull-right-container ">
-                                <span className="text-right-container">گزارشات</span>
-                                <i className="fa fa-th"></i>
-                                {/* <i className="fa fa-files-o"></i> */}
-                              
-                                </span>
-                            </a>
+                                    <a href="#">
+                                        <i className="fa"></i>
+                                        <span>گزارشات</span>
+                                        <span className=" pull-right-container">
+                                        <i className="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
                             <ul className="treeview-menu">
                                     <li><Link to="/ReportEzafe"><i className="fa fa-circle-o"></i>گزارش اضافه برداشت </Link></li>
                                     <li><Link to="/ReportInfraction"><i className="fa fa-circle-o"></i>خلاصه گزارش تخلفات </Link></li>
@@ -76,7 +73,7 @@ import { Link } from 'react-router-dom';
                         </li>
                         
                     </ul>
-                    <button className='btn-default'>  <Link  to="/UnderWaterNew"><i className="fa fa-circle-o"></i>ثبت تخلف</Link></button>
+                   
                 </section>
                 
             </aside> 

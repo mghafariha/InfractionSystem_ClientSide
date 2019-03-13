@@ -28,7 +28,7 @@ import {saveItem,updateItem} from '../../../api';
     handleSubmit=(e)=>{
         this.setState({loading:true})
           e.preventDefault();
-          console.log('saveWorkFlow',this.props.item);
+          console.log('saveWorkFlow',this.props.item);          
           let saveItm={...this.props.item,ViolationId:this.props.lookupId,Step:this.props.step.accessor,InfractionType:this.props.type};
           if(!this.props.item['ID'])
           {
@@ -89,7 +89,7 @@ import {saveItem,updateItem} from '../../../api';
                                                         IsMulti={field.IsMulti}
                                                         />)}
          
-           </div>   <button  type="submit">ذخیره</button>
+           </div>   <button className="btn btn-primary" type="submit">ذخیره</button>
             </form>:<div className='sweet-loading'>
         <Loader
         

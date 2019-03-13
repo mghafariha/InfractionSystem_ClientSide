@@ -94,7 +94,7 @@ const customStyles = {
     // const TagName = this.components[this.props.itemIndex || 'foo'];
    
     Object.assign(ReactTableDefaults, {
-      defaultPageSize: 5,
+      defaultPageSize: 10,
       minRows: 3
       // etc...
     });
@@ -140,7 +140,18 @@ const customStyles = {
  }))
 
 {console.log('clm',clm)};
-
+ clm.push({
+            Header: "گردش کار",
+            accessor: "workflowStatus",
+            Cell: (row) => (
+              <span style={{width:'20px'}} className={(row && !row.original.Status) ? 'label label-danger':(row && row.original.Status==this.props.lastStep) ?'label label-success':'label label-warning' }>
+              
+              {(row && !row.original.Status) ? 'فاقد فایل':(row && row.original.Status==this.props.lastStep) ?'پایان یافته':'در حال اجرا' }
+                           {/* background:(rowInfo && !rowInfo.original.Status) ? '#f99191':(rowInfo && rowInfo.original.Status==this.props.lastStep) ?'#00a65a':'#f39c12'                               */}
+              </span>
+           )
+      })
+  
  clm.push({
   Header: 'عملیات',
   id: 'action',
@@ -169,22 +180,24 @@ const customStyles = {
               data={this.props.items.map((itm,index)=>({...itm,key:index}))}
               noDataText="اطلاعاتی وجود ندارد"
               filterable
+              previousText={'قبل'}
+              nextText={'بعد'}
               defaultFilterMethod={this.defaultFilterMethod}    
                // String(row[filter.id]).startsWith( filter.value)
          
               columns={clm}
-              className="-striped -highlight"
+              className="-striped -highlight reactTableTh"
               
 
-              getTrProps={(state, rowInfo) => {
-               console.log('ffjfd',this.props);
-               console.log('row',rowInfo)
-                        return {
-                          style: {
-                            background:(rowInfo && !rowInfo.original.Status) ? '#f8e1e1':(rowInfo && rowInfo.original.Status==this.props.lastStep) ?'#a3f3a3':'#ececa9'
-                          }
-                        }
-            }}
+            //   getTrProps={(state, rowInfo) => {
+            //    console.log('ffjfd',this.props);
+            //    console.log('row',rowInfo)
+            //             return {
+            //               style: {                                             //red                                                                 //green  //yellow
+            //                 background:(rowInfo && !rowInfo.original.Status) ? '#f99191':(rowInfo && rowInfo.original.Status==this.props.lastStep) ?'#00a65a':'#f39c12'
+            //               }
+            //             }
+            // }}
              
           />
          

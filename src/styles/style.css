@@ -6,7 +6,10 @@
     src: url("fonts/Yekan.eot");
     src: url("fonts/Yekan.eot?#iefix") format("embedded-opentype"),  url("fonts/Yekan.woff") format("woff"), url("fonts/Yekan.ttf") format("truetype"), url("fonts/Yekan.svg#fontawesome") format("svg"); }
     *{    font-family: byekan;}
-
+    .container>.navbar-header
+    {
+        float:right;
+    }
 .ReactModal__Content fieldset{    width: 100%;
     margin: 5px}
 
@@ -33,7 +36,8 @@
 .ReactModal__Content h1 {
     font-family: byekan;
     text-align: center;
-    background: #eaf5ff;
+    background:    #1d78a0 ;
+     /* #eaf5ff; */
     margin: 5px 5px 8px 5px;
     padding: 15px;
     -webkit-box-shadow: 0 0 1px rgba(0,0,0,0.2), 0 0 1px rgba(213,213,213,1);
@@ -101,6 +105,7 @@
         border-radius: 4px;
         box-sizing: border-box;
         max-width: 90%!important;
+        font-family: 'byekan';
     }
         input[type=submit] {
         width: 100%;
@@ -141,8 +146,18 @@
     margin-top: 10px;
     padding: 10px;
 }
+.ReactTable .-pagination .-btn{
+    background-color: #1d78a0;
+}
+.ReactTable .-pagination{
+    padding:1px;
+    
+   border: 2px solid rgba(0,0,0,0.1)
+}
 .error-validation{    border: 2px solid #f00!important; }
-
+.ReactTable{
+    border:4px solid #1d78a0;
+}
 .ReactTable .rt-tbody {
     text-align: center;}
 
@@ -152,7 +167,7 @@
         padding: 10px;
         text-align: right;}
 
-.check-box-items{             background: #ececec;
+.check-box-items{             background: #1d78a0;
     direction: rtl;
     border-radius: 5px;
     display: grid;
@@ -183,6 +198,7 @@
         border-radius: 4px;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
+        min-height: 40px;
     }
 
 .input-project{    grid-template-columns: repeat(3, 1fr);
@@ -228,7 +244,7 @@
         direction: rtl;}
 
 
-.data-grid{    margin: 2%;
+.data-grid{    margin: 1%;
     direction: rtl;}
     button.fa {
         cursor: pointer;
@@ -280,6 +296,23 @@
     text-align: center;
     border: 1px solid #bcc7ff78;
     padding: 8px;
+}
+.ReactTable .rt-thead .rt-tr {
+    background-color: #1d78a0;
+    color: white;
+}
+.ReactTable .rt-thead.-filters .rt-th {
+    color: black;
+}
+.skin-blue .sidebar-menu>li>a{
+    font-size: 16px;
+    color:#e3ebef
+}
+.skin-blue .treeview-menu>li>a{
+    color:#a3cdde;
+}
+.ReactTable .rt-tbody .rt-td{
+    font-size: 14px;
 }
 
 .table-show-item tr:nth-child(even){    background-color: #eaefff;}
